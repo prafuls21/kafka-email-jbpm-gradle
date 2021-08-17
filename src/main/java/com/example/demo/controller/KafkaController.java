@@ -8,10 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/kafka")
@@ -34,7 +31,8 @@ public final class KafkaController {
         producerService.sendMessage(message);
     }
 
-    @PostMapping(path= "/sendEmail", consumes = "application/json", produces = "application/json")
+   // @GetMapping(path= "/sendEmail", consumes = "application/json", produces = "application/json")
+    @GetMapping(path= "/sendEmail")
     public String sendEmail() throws Exception {
         log.info("Spring Mail - Sending Email with Inline Attachment Example");
 

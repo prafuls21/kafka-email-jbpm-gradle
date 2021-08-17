@@ -24,10 +24,10 @@ public class EmailService {
                 MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
                 StandardCharsets.UTF_8.name());
 
-      helper.addAttachment("logo.png", new ClassPathResource("memorynotfound-logo.png"));
-        String inlineImage = "<img src=\"cid:logo.png\"></img><br/>";
+     // helper.addAttachment("logo.png", new ClassPathResource("memorynotfound-logo.png"));
+        //String inlineImage = "<img src=\"cid:logo.png\"></img><br/>";
 
-        helper.setText(inlineImage + mail.getContent(), true);
+        helper.setText( mail.getContent(), true);
         helper.setSubject(mail.getSubject());
         helper.setTo(mail.getTo());
         helper.setFrom(mail.getFrom());
